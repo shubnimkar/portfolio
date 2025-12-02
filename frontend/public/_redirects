@@ -1,0 +1,4 @@
+# Netlify redirects file (backup method)
+# This ensures React Router works correctly for client-side routing
+/*    /index.html   200
+
