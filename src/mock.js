@@ -1,14 +1,14 @@
-// Mock data for DevOps Portfolio
+// Actual data for Shubham Nimkar DevOps Portfolio
 
 export const profileData = {
   name: "Shubham Nimkar",
-  title: "DevOps Engineer",
+  title: "DevOps & Platform Reliability Engineer",
   location: "Pune, India",
   email: "nimkarshubham23@gmail.com",
   phone: "+91-7768827507",
-  bio: "DevOps Engineer with 2 years of hands-on experience designing scalable AWS infrastructure, automating CI/CD pipelines, and managing production-grade containerized environments. Focused on reliability, cost-efficient architecture, monitoring, and incident response.",
+  bio: "DevOps Engineer with 3+ years of end-to-end ownership across CI/CD pipeline engineering, cloud infrastructure, site reliability, and platform automation. Sole DevOps owner at a fast-scaling SaaS startup — managing 10 AWS accounts, 16 Jenkins pipelines, 22+ database clusters, and a self-built Internal Developer Platform. Daily user of AI/LLM tools to accelerate debugging, log analysis, and system engineering decisions.",
   avatar: "https://avatars.githubusercontent.com/u/46809421?v=4",
-  resumeUrl: "https://customer-assets.emergentagent.com/job_1ed0b6ff-130e-4945-99df-6fd6ae3b2a30/artifacts/rdtha42w_Shubham_Nimkar_Devops_Engineer_Resume_December_2025.pdf",
+  resumeUrl: "https://drive.google.com/file/d/19vmNXKnVBMO5HrglDDlefzqBtDYmQvxn/view?usp=sharing",
   social: {
     github: "https://github.com/shubnimkar",
     linkedin: "https://www.linkedin.com/in/shubham-nimkar/",
@@ -20,96 +20,96 @@ export const profileData = {
 export const skills = [
   {
     category: "Cloud Platforms",
-    items: ["AWS EC2", "AWS VPC", "AWS IAM", "AWS S3", "AWS RDS", "AWS CloudWatch"]
+    items: ["AWS EC2", "AWS VPC", "AWS IAM", "AWS S3", "AWS RDS", "AWS CloudWatch", "AWS SES", "AWS Secrets Manager", "AWS Route53"]
   },
   {
     category: "Container & Orchestration",
-    items: ["Docker", "Docker Compose", "Kubernetes", "Minikube"]
+    items: ["Docker", "Docker Compose", "Kubernetes", "k3s (on-prem)", "Minikube", "EKS (Upskilling)"]
   },
   {
     category: "CI/CD & DevOps Tools",
-    items: ["Jenkins", "GitHub Actions", "Git", "Nginx", "PM2"]
+    items: ["Jenkins (Declarative Pipelines)", "GitHub Actions", "Git / GitHub / Gitea", "SonarQube Quality Gates", "Nginx Reverse Proxy", "PM2"]
   },
   {
-    category: "Infrastructure & System Administration",
-    items: ["Linux Administration", "System Hardening", "Networking", "On-Premise Deployments"]
+    category: "Infrastructure & Configuration",
+    items: ["Ansible Playbooks", "Terraform (Upskilling)", "Linux Administration", "System Hardening", "On-Premise Deployments", "VAPT Coordination"]
   },
   {
-    category: "Databases",
-    items: ["MongoDB Atlas", "PostgreSQL", "MySQL"]
+    category: "Databases & Storage",
+    items: ["MongoDB Atlas", "PostgreSQL", "MySQL", "NAS Archival", "EBS Transfer"]
   },
   {
-    category: "Automation & Scripting",
-    items: ["Bash", "Python", "Cron Jobs", "Monitoring Scripts", "Log Rotation"]
+    category: "AI & Platform Engineering",
+    items: ["LLM-Assisted Debugging", "Log Analysis (LLM-powered)", "AWS Bedrock", "Generative AI", "Browser Automation (Playwright)", "Python", "Bash"]
   },
   {
-    category: "DevOps Practices",
-    items: ["Root Cause Analysis", "SRE Principles", "Agile", "Performance Optimization", "Incident Response"]
+    category: "SRE & Practices",
+    items: ["Prometheus & Grafana Alerting", "Uptime & SSL Monitoring", "RCA Incident Workflows", "SLA & KPI Tracking", "Disaster Recovery (RTO/RPO)"]
   },
   {
-    category: "Additional Technologies",
-    items: ["Hadoop", "HPC", "Supervisor", "Certbot SSL/TLS", "Docker Registry"]
+    category: "Enterprise Collaboration",
+    items: ["EY Contractor Consulting", "Workspace to Office365 Migration", "Security Hardening", "Intern Mentoring", "Agile & Jira"]
   }
 ];
 
 export const projects = [
   {
     id: 1,
-    title: "Production-Grade MERN Deployment on AWS",
-    description: "Architected multi-service MERN deployment using Docker, Jenkins CI/CD, Nginx reverse proxy, and MongoDB Atlas with isolated staging/production workflows.",
-    longDescription: "Built a complete production infrastructure for MERN stack applications on AWS. Implemented Docker multi-stage builds, Jenkins CI/CD pipelines reducing deployment time by 60%, Nginx reverse proxy with SSL/TLS, and managed 15+ containerized microservices with 99.9% uptime.",
-    technologies: ["Docker", "Jenkins", "AWS", "Nginx", "MongoDB Atlas", "PM2"],
+    title: "Phabricator → Gitea Migration Automation",
+    description: "Engineered two-phase browser automation scripting to scrape project metadata and replay-create repositories, tasks, and users on Gitea with zero data loss.",
+    longDescription: "Led the migration of an organization's entire project history and version control structure from Phabricator to Gitea. Solved a technical gap where native tooling lacked project-level metadata support. Phase 1 used Playwright to scrape task structures, assignees, and projects. Phase 2 replay-created all equivalent assets on Gitea via APIs, enabling a fully traceable migration.",
+    technologies: ["Playwright", "Node.js", "Gitea API", "Automation Scripting", "Git"],
     metrics: [
-      "60% reduction in deployment time",
-      "99.9% uptime achieved",
-      "20+ weekly zero-downtime releases"
+      "Zero manual data re-entry required",
+      "Traceable migration of repositories and task histories",
+      "Full validation of branch refs and project linkages"
     ],
-    image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=800&h=500&fit=crop",
+    image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=500&fit=crop",
     githubUrl: "https://github.com/shubnimkar",
     demoUrl: null
   },
   {
     id: 2,
-    title: "AWS Multi-Account Migration",
-    description: "Executed seamless migration of 25+ production workloads across AWS accounts using AMIs, EBS snapshots, and automated DNS cutover.",
-    longDescription: "Led a critical infrastructure migration project involving 25+ production workloads. Designed and executed a zero-downtime migration strategy using AWS AMIs, EBS snapshot mappings, automated DNS cutover, and comprehensive rollback procedures. Achieved zero data loss and maintained service availability throughout the migration.",
-    technologies: ["AWS EC2", "AWS EBS", "AWS Route53", "Bash", "Python"],
+    title: "Internal Developer Platform (IDP)",
+    description: "Self-designed and built a secure operational dashboard with deployment tracking, uptime checks, SSL monitoring, and AI-assisted log analysis.",
+    longDescription: "Self-initiated and architected an Internal Developer Platform (IDP) from scratch. The platform serves as a central hub for deployment tracking, server uptime monitoring, automated SSL certificate checks, and wiki modules. Features a self-hosted LLM-powered module for automated log analysis and debugging, backed by RBAC authentication.",
+    technologies: ["Docker", "Python", "MongoDB Atlas", "AWS", "Generative AI", "RBAC"],
     metrics: [
-      "25+ workloads migrated",
-      "Zero data loss achieved",
-      "Zero downtime during migration"
+      "Fully self-hosted and Dockerized deployment",
+      "AI-assisted log analysis reduced MTTR significantly",
+      "Secure role-based access control (RBAC) admin console"
     ],
-    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop",
-    githubUrl: "https://github.com/shubnimkar",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+    githubUrl: "https://github.com/shubnimkar/Infracore",
     demoUrl: null
   },
   {
     id: 3,
-    title: "MongoDB Atlas Backup Automation",
-    description: "Designed fully automated backup pipeline with NAS archival, encryption, retention policies, and validated 4-hour RTO in DR drills.",
-    longDescription: "Implemented a comprehensive disaster recovery solution for MongoDB Atlas. Built automated backup pipelines with NAS archival, enforced encryption at rest and in transit, configured retention policies, and regularly tested disaster recovery procedures. Successfully validated 4-hour Recovery Time Objective in multiple DR drills.",
-    technologies: ["MongoDB Atlas", "Bash", "Python", "AWS S3", "NAS", "Cron"],
+    title: "AWS AI for Bharat Hackathon Prototype",
+    description: "Built a small-business financial assistant utilizing Amazon Bedrock generative AI, serverless Lambda workflows, and OCR text processing.",
+    longDescription: "Designed and submitted a qualifying prototype for the AWS AI for Bharat Hackathon (AWS & Hack2skill). Features a serverless application that analyzes small business cash flows, extracts receipt details using OCR, and provides generative financial predictions via Amazon Bedrock.",
+    technologies: ["AWS Bedrock", "AWS Lambda", "Serverless Architecture", "OCR", "Generative AI"],
     metrics: [
-      "4-hour RTO validated",
-      "100% backup success rate",
-      "Automated daily backups with retention"
+      "Qualifying hackathon submission prototype",
+      "Certificate ID: 2026H2S04AIFB-P03057",
+      "Serverless OCR and cashflow prediction pipeline"
     ],
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=500&fit=crop",
-    githubUrl: "https://github.com/shubnimkar",
+    image: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&h=500&fit=crop",
+    githubUrl: "https://github.com/shubnimkar/vyapar-AI",
     demoUrl: null
   },
   {
     id: 4,
-    title: "On-Premise Infrastructure Deployment",
-    description: "Built complete on-prem Dockerized stack with Nginx/SSL, NAS-based backup strategy, and hardened Linux environment for enterprise clients.",
-    longDescription: "Delivered hardened on-premise infrastructure deployments for enterprise clients. Configured fully Dockerized services, implemented Nginx reverse proxy with SSL/TLS using Certbot, established NAS-based backup solutions, and applied comprehensive Linux system hardening. Ensured secure, reliable infrastructure meeting enterprise security standards.",
-    technologies: ["Docker", "Nginx", "Certbot", "Linux", "NAS", "System Hardening"],
+    title: "MongoDB Atlas & System Reliability Automation",
+    description: "Automated custom backup verification, replication lag checks, and spike detection alerts for 22+ distributed database clusters.",
+    longDescription: "Designed a backup and monitoring pipeline. Automates backup verification by running regular restore tests on 14 Atlas clusters, writes logs to localized NAS archives, monitors replication lag, and alerts on database CPU spikes across 22+ active database clusters (including on-prem replica sets).",
+    technologies: ["Shell Scripting", "Python", "NAS", "Cron Jobs", "Prometheus", "Grafana"],
     metrics: [
-      "Enterprise-grade security",
-      "Fully automated deployments",
-      "Zero security incidents"
+      "14 Atlas clusters backed up with validation",
+      "Restore tests automated periodically",
+      "Spike detection alerting established for 22+ clusters"
     ],
-    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=800&h=500&fit=crop",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=500&fit=crop",
     githubUrl: "https://github.com/shubnimkar",
     demoUrl: null
   }
@@ -122,76 +122,96 @@ export const experience = [
     company: "Waybeyond",
     location: "Pune, India",
     period: "Feb 2024 - Present",
-    description: "Building and managing production-grade AWS infrastructure and CI/CD pipelines for MERN stack applications.",
+    description: "Serving as sole DevOps owner at a fast-scaling SaaS startup, managing 10 AWS accounts, 16 Jenkins pipelines, and over 22 database clusters.",
     responsibilities: [
-      "Built end-to-end CI/CD pipelines using Jenkins, reducing deployment time by 60% and enabling 20+ weekly zero-downtime releases",
-      "Deployed and managed 15+ containerized MERN microservices on AWS using Docker multi-stage builds, Docker Compose, and ECS-like patterns with 99.9% uptime",
-      "Executed AWS multi-account migration for 25+ production workloads using AMIs, EBS snapshots, and DNS cutover with zero data loss",
-      "Designed fully automated MongoDB Atlas backup pipeline with NAS archival, encryption, retention policies, and validated 4-hour RTO in DR drills",
-      "Configured Nginx reverse proxy with SSL/TLS (Certbot), routing rules, and load balancing to handle high-traffic production workloads",
-      "Automated cleanup, log rotation, system monitoring, and alerts using Bash/Python, cutting manual ops by 70%",
-      "Led incident response & RCA for outages using CloudWatch metrics and logs, improving recovery speed and preventing recurrence",
-      "Received 'Wow Awards' (2x) for high-impact infrastructure contributions"
+      "Designed and implemented 16 Jenkins Declarative Pipelines, reducing release lead times by 60% with zero manual intervention",
+      "Standardized organization-wide pipeline conventions, branching strategies, and added SonarQube & container scanning checks",
+      "Led Phabricator to Gitea platform migration by engineering a custom two-phase browser automation script via Playwright",
+      "Managed 10 AWS accounts (3 internal + 7 client) covering EC2, IAM, VPC, RDS, S3, Secrets Manager, and CloudWatch supporting 30+ instances",
+      "Optimized AWS cloud infrastructure spend by 68% (from ₹50-60K to ₹16-17K monthly) via reserved instances and rightsizing",
+      "Designed and executed cross-account migrations and built hybrid cloud infrastructure moving select services on-premise",
+      "Defined SRE targets (RPO ~24h, RTO <=1h) and built full observability stack with Prometheus, Grafana, and CloudWatch alerts",
+      "Self-initiated and built a secure Dockerized Internal Developer Platform (IDP) featuring LLM-powered log analysis modules",
+      "Served as an external tech contractor for EY (Ernst & Young) consulting on application deployment and infrastructure choices",
+      "Onboarded and mentored junior interns, and led complete Google Workspace to Microsoft 365 migration for 35 users (1.5 TB data)"
     ]
   },
   {
     id: 2,
     title: "Operations Associate",
     company: "Awign",
-    location: "Bangalore, India",
+    location: "India",
     period: "Feb 2021 - May 2022",
-    description: "Managed operations and optimized workflows for a 300+ workforce.",
+    description: "Managed operations, field coordination, and workflow execution.",
     responsibilities: [
-      "Managed operations for 300+ workforce, implementing workflow optimizations improving efficiency by 35%",
-      "Improved client satisfaction through SLA monitoring, performance tracking, and process redesign",
-      "Coordinated cross-functional teams to ensure seamless project delivery",
-      "Analyzed operational metrics and implemented data-driven improvements"
+      "Coordinated cross-functional workflows and managed field operations",
+      "Developed process management standards and operational discipline that laid the groundwork for transition to automation-first engineering"
     ]
+  }
+];
+
+export const education = [
+  {
+    id: 1,
+    degree: "PG-Diploma in HPC & Systems Administration",
+    institution: "C-DAC Pune",
+    period: "Mar 2023 – Aug 2023",
+    details: "Specialized in High Performance Computing networks, Linux system architecture, cluster setup, and shell automation scripts.",
+    logo: "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=100&h=100&fit=crop"
+  },
+  {
+    id: 2,
+    degree: "B.E. — Electronics & Communications",
+    institution: "Sinhgad Institute, Pune",
+    period: "2016 – 2020",
+    details: "Foundation in microprocessor architectures, embedded operating systems, computing networks, and electronics engineering.",
+    logo: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=100&h=100&fit=crop"
   }
 ];
 
 export const certifications = [
   {
     id: 1,
-    name: "AWS Cloud Essentials",
-    issuer: "Amazon Web Services",
-    date: "2023",
-    credentialId: "Verified",
+    name: "AWS AI for Bharat Hackathon Participant",
+    issuer: "AWS & Hack2skill",
+    date: "June 2026",
+    credentialId: "2026H2S04AIFB-P03057",
     logo: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=100&h=100&fit=crop"
   },
   {
     id: 2,
-    name: "AWS Compute",
+    name: "AWS Cloud Essentials",
     issuer: "Amazon Web Services",
     date: "2023",
-    credentialId: "Verified",
+    credentialId: "Verified ID",
     logo: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=100&h=100&fit=crop"
   },
   {
     id: 3,
-    name: "AWS Cloud Quest: Cloud Practitioner",
+    name: "AWS Compute",
     issuer: "Amazon Web Services",
     date: "2023",
-    credentialId: "Verified",
+    credentialId: "Verified ID",
     logo: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=100&h=100&fit=crop"
   },
   {
     id: 4,
-    name: "PG-Diploma in HPC & Systems Administration",
-    issuer: "C-DAC Pune",
-    date: "Aug 2023",
-    credentialId: "Mar 2023 - Aug 2023",
-    logo: "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=100&h=100&fit=crop"
+    name: "AWS Cloud Quest: Cloud Practitioner",
+    issuer: "Amazon Web Services",
+    date: "2023",
+    credentialId: "Verified ID",
+    logo: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=100&h=100&fit=crop"
   },
   {
     id: 5,
-    name: "Wow Awards (2x)",
+    name: "Wow Awards (2x) for Infrastructure Contribution",
     issuer: "Waybeyond",
     date: "2024",
-    credentialId: "High-impact contributions",
+    credentialId: "High-impact infrastructure delivery",
     logo: "https://images.unsplash.com/photo-1567427017947-545c5f8d16ad?w=100&h=100&fit=crop"
   }
 ];
+
 
 export const blogPosts = [
   {

@@ -1,55 +1,26 @@
-@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Outfit:wght@300;400;500;600;700;800&display=swap');
 
 @import "tailwindcss";
 
 :root {
-    --background: 222.2 84% 4.9%;
+    --background: 250 60% 4%; /* Dark obsidian with a hint of purple */
     --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
+    --card: 250 50% 6%;
     --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
+    --popover: 250 60% 4%;
     --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
+    --primary: 271 91% 65%; /* Electric Purple/Violet */
+    --primary-foreground: 210 40% 98%;
+    --secondary: 250 30% 12%;
     --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
+    --accent: 190 90% 50%; /* Cyber Cyan */
     --accent-foreground: 210 40% 98%;
     --destructive: 0 62.8% 30.6%;
     --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
-    --chart-1: 220 70% 50%;
-    --chart-2: 160 60% 45%;
-    --chart-3: 30 80% 55%;
-    --chart-4: 280 65% 60%;
-    --chart-5: 340 75% 55%;
-    --radius: 0.5rem;
-}
-
-.dark {
-    --background: 222.2 84% 4.9%;
-    --foreground: 210 40% 98%;
-    --card: 222.2 84% 4.9%;
-    --card-foreground: 210 40% 98%;
-    --popover: 222.2 84% 4.9%;
-    --popover-foreground: 210 40% 98%;
-    --primary: 210 40% 98%;
-    --primary-foreground: 222.2 47.4% 11.2%;
-    --secondary: 217.2 32.6% 17.5%;
-    --secondary-foreground: 210 40% 98%;
-    --muted: 217.2 32.6% 17.5%;
-    --muted-foreground: 215 20.2% 65.1%;
-    --accent: 217.2 32.6% 17.5%;
-    --accent-foreground: 210 40% 98%;
-    --destructive: 0 62.8% 30.6%;
-    --destructive-foreground: 210 40% 98%;
-    --border: 217.2 32.6% 17.5%;
-    --input: 217.2 32.6% 17.5%;
-    --ring: 212.7 26.8% 83.9%;
+    --border: 250 25% 15%;
+    --input: 250 25% 15%;
+    --ring: 271 91% 65%;
+    --radius: 0.75rem;
 }
 
 @theme {
@@ -73,30 +44,78 @@
     --color-input: hsl(var(--input));
     --color-ring: hsl(var(--ring));
 
-    --color-chart-1: hsl(var(--chart-1));
-    --color-chart-2: hsl(var(--chart-2));
-    --color-chart-3: hsl(var(--chart-3));
-    --color-chart-4: hsl(var(--chart-4));
-    --color-chart-5: hsl(var(--chart-5));
+    /* Redefine slate to dark space-zinc/obsidian palette */
+    --color-slate-50: #f8fafc;
+    --color-slate-100: #f1f5f9;
+    --color-slate-200: #e2e8f0;
+    --color-slate-300: #cbd5e1;
+    --color-slate-400: #94a3b8;
+    --color-slate-500: #64748b;
+    --color-slate-600: #475569;
+    --color-slate-700: #1b1a30; /* Muted tech blue border */
+    --color-slate-800: #0d0c1d; /* Deep blue-obsidian card */
+    --color-slate-900: #060612; /* Card base */
+    --color-slate-950: #030308; /* Obsidian base */
+
+    /* Redefine teal to Electric Violet/Purple */
+    --color-teal-50: #faf5ff;
+    --color-teal-100: #f3e8ff;
+    --color-teal-200: #e9d5ff;
+    --color-teal-300: #d8b4fe;
+    --color-teal-400: #c084fc; /* Light electric violet */
+    --color-teal-500: #a855f7; /* Electric Purple */
+    --color-teal-600: #9333ea;
+    --color-teal-700: #7e22ce;
+    --color-teal-800: #6b21a8;
+    --color-teal-900: #581c87;
+    --color-teal-950: #120b2e; /* Dark violet base */
+
+    /* Redefine indigo to Cyber Cyan */
+    --color-indigo-50: #ecfeff;
+    --color-indigo-100: #cffafe;
+    --color-indigo-200: #a5f3fc;
+    --color-indigo-300: #67e8f9;
+    --color-indigo-400: #22d3ee; /* Bright cyber cyan */
+    --color-indigo-500: #06b6d4; /* Cyber Cyan */
+    --color-indigo-600: #0891b2;
+    --color-indigo-700: #0e7490;
+    --color-indigo-800: #155e75;
+    --color-indigo-900: #164e63;
+    --color-indigo-950: #061f26;
 
     --radius-lg: var(--radius);
     --radius-md: calc(var(--radius) - 2px);
     --radius-sm: calc(var(--radius) - 4px);
 
-    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", sans-serif;
-    --font-serif: Georgia, serif;
-    --font-mono: 'JetBrains Mono', source-code-pro, Menlo, Monaco, Consolas, monospace;
+    --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    --font-display: 'Outfit', sans-serif;
+    --font-mono: 'JetBrains Mono', monospace;
 
-    --animate-accordion-down: accordion-down 0.2s ease-out;
-    --animate-accordion-up: accordion-up 0.2s ease-out;
+    --animate-float-slow: float-slow 15s ease-in-out infinite;
+    --animate-float-medium: float-medium 12s ease-in-out infinite;
+    --animate-pulse-glow: pulse-glow 3s ease-in-out infinite;
+    --animate-grid-drift: grid-drift 30s linear infinite;
+    --animate-terminal-blink: terminal-blink 1s step-end infinite;
 
-    @keyframes accordion-down {
-        from { height: 0; }
-        to { height: var(--radix-accordion-content-height); }
+    @keyframes float-slow {
+        0%, 100% { transform: translateY(0px) scale(1); }
+        50% { transform: translateY(-30px) scale(1.1) translateX(10px); }
     }
-    @keyframes accordion-up {
-        from { height: var(--radix-accordion-content-height); }
-        to { height: 0; }
+    @keyframes float-medium {
+        0%, 100% { transform: translateY(0px) scale(1) translateX(0px); }
+        50% { transform: translateY(25px) scale(0.9) translateX(-20px); }
+    }
+    @keyframes pulse-glow {
+        0%, 100% { opacity: 0.4; }
+        50% { opacity: 0.8; }
+    }
+    @keyframes grid-drift {
+        0% { background-position: 0px 0px; }
+        100% { background-position: 40px 40px; }
+    }
+    @keyframes terminal-blink {
+        from, to { border-color: transparent }
+        50% { border-color: currentColor }
     }
 }
 
@@ -105,16 +124,82 @@ body {
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
-    background-color: hsl(var(--background));
+    background-color: #040409; /* Deep Cyber Obsidian */
     color: hsl(var(--foreground));
+    overflow-x: hidden;
 }
 
 h1, h2, h3, h4, h5, h6 {
-    font-family: 'IBM Plex Sans', sans-serif;
+    font-family: var(--font-display);
+    letter-spacing: -0.02em;
 }
 
-code {
+code, pre {
     font-family: var(--font-mono);
+}
+
+/* Glassmorphism Classes */
+.glass-card {
+    background: rgba(13, 12, 30, 0.45); /* Muted obsidian-violet tint */
+    backdrop-filter: blur(12px);
+    -webkit-backdrop-filter: blur(12px);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.45);
+}
+
+.glass-card-hover {
+    transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+.glass-card-hover:hover {
+    background: rgba(13, 12, 30, 0.65);
+    border-color: rgba(168, 85, 247, 0.3); /* violet-500/30 */
+    box-shadow: 0 10px 40px -10px rgba(168, 85, 247, 0.15);
+    transform: translateY(-4px);
+}
+
+.glass-navbar {
+    background: rgba(4, 4, 9, 0.7);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.04);
+}
+
+/* Tech/DevOps Visualizations background pattern */
+.tech-grid {
+    background-size: 40px 40px;
+    background-image: 
+        linear-gradient(to right, rgba(168, 85, 247, 0.015) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(168, 85, 247, 0.015) 1px, transparent 1px);
+}
+
+.tech-dots {
+    background-image: radial-gradient(rgba(168, 85, 247, 0.04) 1px, transparent 0);
+    background-size: 24px 24px;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+::-webkit-scrollbar-track {
+    background: #040409;
+}
+::-webkit-scrollbar-thumb {
+    background: #191635;
+    border-radius: 9999px;
+    border: 2px solid #040409;
+}
+::-webkit-scrollbar-thumb:hover {
+    background: #2b255e;
+}
+
+/* Gradient text helpers */
+.text-glow-teal {
+    text-shadow: 0 0 15px rgba(168, 85, 247, 0.4);
+}
+.text-glow-indigo {
+    text-shadow: 0 0 15px rgba(6, 182, 212, 0.4);
 }
 
 * {
