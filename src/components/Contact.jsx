@@ -9,9 +9,9 @@ import { Card, CardContent } from './ui/card';
 import { useToast } from '../hooks/use-toast';
 import { profileData } from '../mock';
 
-const ContactTerminal = () => {
+const ContactTerminal = ({ handshakeLogs }) => {
   return (
-    <div className="w-full font-mono text-xs sm:text-sm bg-slate-950/90 rounded-2xl border border-teal-500/20 shadow-2xl overflow-hidden">
+    <div className="w-full font-mono text-xs bg-slate-950/90 rounded-2xl border border-teal-500/20 shadow-2xl overflow-hidden">
       {/* Title Bar */}
       <div className="bg-slate-900/90 px-4 py-3 border-b border-slate-800 flex items-center justify-between">
         <div className="flex space-x-1.5">
@@ -19,7 +19,7 @@ const ContactTerminal = () => {
           <div className="w-2.5 h-2.5 rounded-full bg-amber-500"></div>
           <div className="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
         </div>
-        <div className="text-slate-400 text-xs flex items-center gap-1.5">
+        <div className="text-slate-400 text-xs flex items-center gap-1.5 select-none">
           <Terminal size={12} className="text-teal-400" />
           ssh shubham@portfolio.dev
         </div>
@@ -36,7 +36,7 @@ const ContactTerminal = () => {
           Host authenticity verified. Exchanging SSH keys...<br />
           Connection established. Secure session active.
         </div>
-        <div className="py-2 border-y border-slate-900 bg-slate-900/10 text-center text-teal-400 font-bold">
+        <div className="py-2 border-y border-slate-900 bg-slate-900/10 text-center text-teal-400 font-bold select-none">
           *** SHUBHAM DEVOPS CONTROL CENTER ***
         </div>
         <div className="space-y-2.5">
@@ -57,7 +57,28 @@ const ContactTerminal = () => {
             <span className="text-slate-300">{profileData.location}</span>
           </div>
         </div>
-        <div className="pt-2 border-t border-slate-900 flex items-center gap-2 text-slate-400">
+
+        {handshakeLogs.length > 0 && (
+          <div className="pt-3 border-t border-slate-900 space-y-1 text-[10px] font-mono leading-relaxed">
+            {handshakeLogs.map((log, index) => {
+              let logColor = "text-slate-400";
+              if (log.startsWith(">>>")) {
+                logColor = "text-teal-300 font-bold";
+              } else if (log.includes("[SUCCESS]")) {
+                logColor = "text-emerald-400 font-semibold";
+              } else if (log.includes("[FAIL]")) {
+                logColor = "text-rose-400 font-semibold";
+              }
+              return (
+                <div key={index} className={logColor}>
+                  {log}
+                </div>
+              );
+            })}
+          </div>
+        )}
+
+        <div className="pt-2 border-t border-slate-900 flex items-center gap-2 text-slate-400 select-none">
           <ShieldAlert size={14} className="text-indigo-400 animate-pulse" />
           <span>Status: Idle & listening for secure messages...</span>
         </div>
@@ -75,6 +96,7 @@ const Contact = () => {
     message: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
+  const [handshakeLogs, setHandshakeLogs] = useState([]);
 
   const handleChange = (e) => {
     setFormData({
@@ -86,9 +108,25 @@ const Contact = () => {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setIsSubmitting(true);
+    setHandshakeLogs([]);
+
+    const runHandshakeLog = (text, delay) => {
+      return new Promise(resolve => {
+        setTimeout(() => {
+          setHandshakeLogs(prev => [...prev, text]);
+          resolve();
+        }, delay);
+      });
+    };
+
+    await runHandshakeLog(">>> INITIALIZING SECURE PACKET HANDSHAKE...", 100);
+    await runHandshakeLog("Checking system network headers... [OK]", 300);
+    await runHandshakeLog("Encrypting form payload blocks with AES-256... [OK]", 300);
+    await runHandshakeLog("Routing packet tunnel to Web3Forms API proxy gateway...", 300);
 
     const accessKey = process.env.NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY || process.env.REACT_APP_WEB3FORMS_ACCESS_KEY;
     if (!accessKey || accessKey === 'YOUR_WEB3FORMS_ACCESS_KEY_HERE') {
+      await runHandshakeLog("[FAIL] Missing NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY credentials.", 200);
       toast({
         title: "Setup Required",
         description: "Please configure your NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY in your environment variables.",
@@ -117,12 +155,14 @@ const Contact = () => {
 
       const result = await response.json();
       if (result.success) {
+        await runHandshakeLog("[SUCCESS] Packet transmitted. Secure connection term closed.", 200);
         toast({
           title: "Message Sent!",
           description: "Thank you for reaching out. I'll get back to you soon.",
         });
         setFormData({ name: '', email: '', subject: '', message: '' });
       } else {
+        await runHandshakeLog(`[FAIL] Transmission error: ${result.message}`, 200);
         toast({
           title: "Submission Failed",
           description: result.message || "Something went wrong. Please try again.",
@@ -130,6 +170,7 @@ const Contact = () => {
         });
       }
     } catch (error) {
+      await runHandshakeLog("[FAIL] Remote socket network resolution timeout.", 200);
       toast({
         title: "Error occurred",
         description: "Unable to send message. Please check your internet connection.",
@@ -156,7 +197,7 @@ const Contact = () => {
         <div className="grid lg:grid-cols-5 gap-8 items-start">
           {/* SSH Details Panel */}
           <div className="lg:col-span-2 space-y-6">
-            <ContactTerminal />
+            <ContactTerminal handshakeLogs={handshakeLogs} />
             
             <div className="p-5 rounded-2xl glass-card border-slate-800/80 space-y-2">
               <h3 className="text-white text-sm font-bold font-display">Communication SLA</h3>

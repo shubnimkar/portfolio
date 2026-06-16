@@ -65,7 +65,7 @@ export const projects = [
       "Full validation of branch refs and project linkages"
     ],
     image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=800&h=500&fit=crop",
-    githubUrl: "https://github.com/shubnimkar",
+    githubUrl: "https://medium.com/@shubnimkar/how-i-self-hosted-gitea-on-aws-with-ec2-rds-postgresql-c35c77cf6c80",
     demoUrl: null
   },
   {
@@ -112,6 +112,21 @@ export const projects = [
     image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=800&h=500&fit=crop",
     githubUrl: "https://github.com/shubnimkar",
     demoUrl: null
+  },
+  {
+    id: 5,
+    title: "TraceAlyzer Log Parser",
+    description: "A full-stack, Dockerized log parsing and visualization app supporting Nginx, Docker, Syslog, Kernel, and JSON logs — built with the MERN stack and MongoDB Atlas.",
+    longDescription: "A full-stack, Dockerized log parsing and visualization application supporting multiple log formats including Nginx, Docker container logs, Syslog, Kernel, and standard JSON logs. Features an interactive visualization dashboard built with the MERN stack (MongoDB, Express, React, Node.js) and integrated with MongoDB Atlas for reliable storage and querying.",
+    technologies: ["React", "Node.js", "Express", "MongoDB Atlas", "Docker", "Docker Compose", "Log Parsing"],
+    metrics: [
+      "Parses Nginx, Docker, Syslog, Kernel, and JSON formats",
+      "Interactive real-time visualization dashboard UI",
+      "Fully containerized local/production setup via Docker Compose"
+    ],
+    image: "https://images.unsplash.com/photo-1551419762-4a3d998f6292?w=800&h=500&fit=crop",
+    githubUrl: "https://github.com/shubnimkar/TraceAlyzer-log-parser",
+    demoUrl: null
   }
 ];
 
@@ -155,15 +170,15 @@ export const education = [
     id: 1,
     degree: "PG-Diploma in HPC & Systems Administration",
     institution: "C-DAC Pune",
-    period: "Mar 2023 – Aug 2023",
+    period: "2023",
     details: "Specialized in High Performance Computing networks, Linux system architecture, cluster setup, and shell automation scripts.",
     logo: "https://images.unsplash.com/photo-1516110833967-0b5716ca1387?w=100&h=100&fit=crop"
   },
   {
     id: 2,
-    degree: "B.E. — Electronics & Communications",
-    institution: "Sinhgad Institute, Pune",
-    period: "2016 – 2020",
+    degree: "B.E. — Electronics & Telecommunications",
+    institution: "Sinhgad Institute of Technology, Pune",
+    period: "2020",
     details: "Foundation in microprocessor architectures, embedded operating systems, computing networks, and electronics engineering.",
     logo: "https://images.unsplash.com/photo-1523474253046-8cd2748b5fd2?w=100&h=100&fit=crop"
   }
@@ -216,6 +231,36 @@ export const certifications = [
 export const blogPosts = [
   {
     id: 1,
+    title: "How I Self-Hosted Gitea on AWS with EC2 + RDS PostgreSQL",
+    excerpt: "A complete setup guide covering infrastructure, Docker Compose deployment, backups, and disaster recovery for self-hosting Gitea — your own private GitHub on AWS.",
+    date: "2026-05-27",
+    readTime: "8 min read",
+    category: "AWS & Self-Hosting",
+    image: "https://images.unsplash.com/photo-1607799279861-4dd421887fb3?w=600&h=400&fit=crop",
+    url: "https://medium.com/@shubnimkar/how-i-self-hosted-gitea-on-aws-with-ec2-rds-postgresql-c35c77cf6c80"
+  },
+  {
+    id: 2,
+    title: "Deploying Beszel: A Lightweight Container-Based Monitoring Setup for Servers",
+    excerpt: "Testing Beszel as a simpler alternative to Prometheus + Grafana for multi-server monitoring — deployed via Docker Compose with a clean agent-hub architecture.",
+    date: "2026-05-10",
+    readTime: "5 min read",
+    category: "Monitoring & Docker",
+    image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=400&fit=crop",
+    url: "https://medium.com/@shubnimkar/deploying-beszel-a-lightweight-container-based-monitoring-setup-for-servers-4eccd02e7b21"
+  },
+  {
+    id: 3,
+    title: "The Definitive Guide to SSL, TLS, and HTTPS: How the Secure Web Works",
+    excerpt: "A deep-dive into SSL, TLS, and HTTPS — covering the TLS handshake, chain of trust, SNI, HSTS, certificate types, and why HTTPS is now faster than plain HTTP.",
+    date: "2026-02-18",
+    readTime: "5 min read",
+    category: "Security & Networking",
+    image: "https://images.unsplash.com/photo-1555949963-aa79dcee981c?w=600&h=400&fit=crop",
+    url: "https://medium.com/@shubnimkar/the-definitive-guide-to-ssl-tls-and-https-how-the-secure-web-works-a18926ac10d6"
+  },
+  {
+    id: 4,
     title: "🚀 Deploying a MERN Stack App Using Docker & AWS Elastic Beanstalk",
     excerpt: "A comprehensive guide to deploying MERN applications using Docker containers and AWS Elastic Beanstalk for scalable, production-ready infrastructure.",
     date: "2024-08-01",
@@ -223,36 +268,6 @@ export const blogPosts = [
     category: "AWS & Docker",
     image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=600&h=400&fit=crop",
     url: "https://medium.com/@shubnimkar/deploying-a-mern-stack-app-using-docker-aws-elastic-beanstalk-26ed303322d6"
-  },
-  {
-    id: 2,
-    title: "🚀 Blue-Green vs. Canary Deployment in Kubernetes",
-    excerpt: "In-depth comparison of Blue-Green and Canary deployment strategies in Kubernetes to help you choose the right release strategy for your applications.",
-    date: "2024-06-18",
-    readTime: "10 min read",
-    category: "Kubernetes",
-    image: "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&h=400&fit=crop",
-    url: "https://medium.com/@shubnimkar/blue-green-vs-canary-deployment-in-kubernetes-which-release-strategy-should-you-choose-0f7202f0e386"
-  },
-  {
-    id: 3,
-    title: "Mastering Nginx — Part 2: Caching, Security & Monitoring",
-    excerpt: "Advanced Nginx configurations covering caching strategies, security hardening, and monitoring best practices for production environments.",
-    date: "2024-03-18",
-    readTime: "15 min read",
-    category: "Nginx & Security",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
-    url: "https://medium.com/@shubnimkar/mastering-nginx-part-2-caching-security-monitoring-22170e2b2de9"
-  },
-  {
-    id: 4,
-    title: "Mastering Nginx — Part 1: Getting Started with Nginx",
-    excerpt: "Complete beginner's guide to Nginx covering installation, basic configuration, reverse proxy setup, and load balancing fundamentals.",
-    date: "2024-03-17",
-    readTime: "12 min read",
-    category: "Nginx",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
-    url: "https://medium.com/@shubnimkar/mastering-nginx-part-1-getting-started-with-nginx-92e37572cc92"
   },
   {
     id: 5,
@@ -266,6 +281,16 @@ export const blogPosts = [
   },
   {
     id: 6,
+    title: "🚀 Blue-Green vs. Canary Deployment in Kubernetes",
+    excerpt: "In-depth comparison of Blue-Green and Canary deployment strategies in Kubernetes to help you choose the right release strategy for your applications.",
+    date: "2024-06-18",
+    readTime: "10 min read",
+    category: "Kubernetes",
+    image: "https://images.unsplash.com/photo-1633265486064-086b219458ec?w=600&h=400&fit=crop",
+    url: "https://medium.com/@shubnimkar/blue-green-vs-canary-deployment-in-kubernetes-which-release-strategy-should-you-choose-0f7202f0e386"
+  },
+  {
+    id: 7,
     title: "Hands-On Kubernetes: Deploying a MongoDB and Express App on Minikube",
     excerpt: "Practical hands-on tutorial for deploying MongoDB and Express.js applications on Kubernetes using Minikube for local development.",
     date: "2024-06-11",
@@ -273,5 +298,35 @@ export const blogPosts = [
     category: "Kubernetes",
     image: "https://images.unsplash.com/photo-1667372393119-3d4c48d07fc9?w=600&h=400&fit=crop",
     url: "https://medium.com/@shubnimkar/hands-on-kubernetes-deploying-a-mongodb-and-express-app-on-minikube-6a11d536a8be"
+  },
+  {
+    id: 8,
+    title: "How to Set Up and Use Private Docker Registry with Authentication & Web UI",
+    excerpt: "A step-by-step guide to setting up a private Docker registry on Ubuntu with Nginx reverse proxy, htpasswd authentication, SSL, and a Portainer Web UI.",
+    date: "2024-03-29",
+    readTime: "7 min read",
+    category: "Docker & Security",
+    image: "https://images.unsplash.com/photo-1618401471353-b98afee0b2eb?w=600&h=400&fit=crop",
+    url: "https://medium.com/@shubnimkar/how-to-set-up-and-use-private-docker-registry-with-authentication-web-ui-361ee39b2079"
+  },
+  {
+    id: 9,
+    title: "Mastering Nginx — Part 2: Caching, Security & Monitoring",
+    excerpt: "Advanced Nginx configurations covering caching strategies, security hardening, and monitoring best practices for production environments.",
+    date: "2024-03-18",
+    readTime: "15 min read",
+    category: "Nginx & Security",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
+    url: "https://medium.com/@shubnimkar/mastering-nginx-part-2-caching-security-monitoring-22170e2b2de9"
+  },
+  {
+    id: 10,
+    title: "Mastering Nginx — Part 1: Getting Started with Nginx",
+    excerpt: "Complete beginner's guide to Nginx covering installation, basic configuration, reverse proxy setup, and load balancing fundamentals.",
+    date: "2024-03-17",
+    readTime: "12 min read",
+    category: "Nginx",
+    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?w=600&h=400&fit=crop",
+    url: "https://medium.com/@shubnimkar/mastering-nginx-part-1-getting-started-with-nginx-92e37572cc92"
   }
 ];

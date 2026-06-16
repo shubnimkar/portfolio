@@ -14,17 +14,19 @@ const Skills = () => {
         icon: Cloud,
         accentClass: 'text-cyan-400',
         bgClass: 'bg-cyan-500/10',
-        borderClass: 'hover:border-cyan-500/40',
-        glowClass: 'hover:shadow-cyan-950/20'
+        glowClass: 'glow-card-indigo',
+        gradientClass: 'from-cyan-400 to-indigo-500',
+        proficiency: 90
       };
     }
     if (name.includes('container')) {
       return {
         icon: Server,
-        accentClass: 'text-blue-400',
-        bgClass: 'bg-blue-500/10',
-        borderClass: 'hover:border-blue-500/40',
-        glowClass: 'hover:shadow-blue-950/20'
+        accentClass: 'text-teal-400',
+        bgClass: 'bg-teal-500/10',
+        glowClass: 'glow-card-teal',
+        gradientClass: 'from-teal-400 to-indigo-500',
+        proficiency: 85
       };
     }
     if (name.includes('ci/cd')) {
@@ -32,8 +34,9 @@ const Skills = () => {
         icon: RefreshCw,
         accentClass: 'text-teal-400',
         bgClass: 'bg-teal-500/10',
-        borderClass: 'hover:border-teal-500/40',
-        glowClass: 'hover:shadow-teal-950/20'
+        glowClass: 'glow-card-teal',
+        gradientClass: 'from-teal-400 to-indigo-500',
+        proficiency: 95
       };
     }
     if (name.includes('infrastructure') || name.includes('system')) {
@@ -41,8 +44,9 @@ const Skills = () => {
         icon: Cpu,
         accentClass: 'text-indigo-400',
         bgClass: 'bg-indigo-500/10',
-        borderClass: 'hover:border-indigo-500/40',
-        glowClass: 'hover:shadow-indigo-950/20'
+        glowClass: 'glow-card-purple',
+        gradientClass: 'from-indigo-400 to-purple-500',
+        proficiency: 80
       };
     }
     if (name.includes('database')) {
@@ -50,34 +54,38 @@ const Skills = () => {
         icon: Database,
         accentClass: 'text-purple-400',
         bgClass: 'bg-purple-500/10',
-        borderClass: 'hover:border-purple-500/40',
-        glowClass: 'hover:shadow-purple-950/20'
+        glowClass: 'glow-card-purple',
+        gradientClass: 'from-purple-400 to-pink-500',
+        proficiency: 75
       };
     }
-    if (name.includes('automation') || name.includes('scripting')) {
+    if (name.includes('ai') || name.includes('automation') || name.includes('scripting')) {
       return {
         icon: Play,
         accentClass: 'text-amber-400',
         bgClass: 'bg-amber-500/10',
-        borderClass: 'hover:border-amber-500/40',
-        glowClass: 'hover:shadow-amber-950/20'
+        glowClass: 'glow-card-amber',
+        gradientClass: 'from-amber-400 to-orange-500',
+        proficiency: 80
       };
     }
-    if (name.includes('practices')) {
+    if (name.includes('practices') || name.includes('sre')) {
       return {
         icon: BarChart,
         accentClass: 'text-rose-400',
         bgClass: 'bg-rose-500/10',
-        borderClass: 'hover:border-rose-500/40',
-        glowClass: 'hover:shadow-rose-950/20'
+        glowClass: 'glow-card-rose',
+        gradientClass: 'from-rose-400 to-pink-500',
+        proficiency: 85
       };
     }
     return {
       icon: Settings,
-      accentClass: 'text-slate-400',
-      bgClass: 'bg-slate-500/10',
-      borderClass: 'hover:border-slate-500/40',
-      glowClass: 'hover:shadow-slate-950/20'
+      accentClass: 'text-emerald-400',
+      bgClass: 'bg-emerald-500/10',
+      glowClass: 'glow-card-emerald',
+      gradientClass: 'from-emerald-400 to-teal-500',
+      proficiency: 80
     };
   };
 
@@ -87,9 +95,9 @@ const Skills = () => {
         
         {/* Title */}
         <div className="text-center mb-16">
-          <h2 className="text-4xl sm:text-5xl font-extrabold text-white mb-4 tracking-tight">Technical Stack</h2>
-          <div className="w-16 h-1 bg-gradient-to-r from-teal-400 to-cyan-500 mx-auto rounded-full mb-6"></div>
-          <p className="text-base sm:text-lg text-slate-400 max-w-2xl mx-auto">
+          <h2 className="text-4xl sm:text-5xl font-extrabold text-slate-900 dark:text-white mb-4 tracking-tight">Technical Stack</h2>
+          <div className="w-16 h-1 bg-gradient-to-r from-teal-600 to-indigo-600 dark:from-teal-400 to-cyan-500 mx-auto rounded-full mb-6"></div>
+          <p className="text-base sm:text-lg text-slate-600 dark:text-slate-400 max-w-2xl mx-auto">
             A specialized toolkit focused on cloud automation, pipeline speed, security, and high reliability systems.
           </p>
         </div>
@@ -102,15 +110,15 @@ const Skills = () => {
             return (
               <div
                 key={index}
-                className={`p-6 rounded-2xl glass-card border-slate-800/80 transition-all duration-300 hover:shadow-xl ${theme.borderClass} ${theme.glowClass} flex flex-col justify-between group`}
+                className={`p-6 rounded-2xl glass-card border-slate-200 dark:border-slate-800/80 transition-all duration-300 hover:shadow-xl ${theme.glowClass} flex flex-col justify-between group`}
               >
-                <div>
+                <div className="space-y-5">
                   {/* Category Header */}
-                  <div className="flex items-center gap-3 mb-5">
+                  <div className="flex items-center gap-3">
                     <div className={`w-10 h-10 rounded-xl ${theme.bgClass} flex items-center justify-center transition-transform duration-300 group-hover:scale-110`}>
                       <IconComponent className={`${theme.accentClass}`} size={20} />
                     </div>
-                    <h3 className="text-base font-bold text-white font-display">
+                    <h3 className="text-base font-bold text-slate-900 dark:text-white font-display">
                       {skillGroup.category}
                     </h3>
                   </div>
@@ -120,11 +128,25 @@ const Skills = () => {
                     {skillGroup.items.map((skill, skillIndex) => (
                       <Badge
                         key={skillIndex}
-                        className="bg-slate-950/60 hover:bg-slate-900 text-slate-300 border-slate-800/80 hover:text-white hover:border-slate-700 transition-all duration-300 text-xs py-1.5 px-3 rounded-lg"
+                        className="bg-slate-950/60 hover:bg-slate-900 text-slate-300 border-slate-850 hover:text-white hover:border-slate-700 transition-all duration-300 text-xs py-1.5 px-3 rounded-lg"
                       >
                         {skill}
                       </Badge>
                     ))}
+                  </div>
+
+                  {/* System Proficiency Health Gauge */}
+                  <div className="mt-6 pt-4 border-t border-slate-900/60 space-y-1.5 select-none">
+                    <div className="flex justify-between text-[9px] font-mono font-bold text-slate-500 uppercase tracking-wider">
+                      <span>Deployment Level</span>
+                      <span className={`${theme.accentClass}`}>Active Production</span>
+                    </div>
+                    <div className="h-2 w-full bg-slate-950 rounded-full overflow-hidden border border-slate-900/50 p-0.5">
+                      <div 
+                        className={`h-full rounded-full bg-gradient-to-r ${theme.gradientClass} shadow-[0_0_8px_rgba(20,184,166,0.2)] transition-all duration-500`} 
+                        style={{ width: `${theme.proficiency}%` }}
+                      ></div>
+                    </div>
                   </div>
                 </div>
               </div>

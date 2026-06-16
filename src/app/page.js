@@ -32,7 +32,7 @@ export default function HomePage() {
       {/* Main Content */}
       <div className="relative z-10">
         <Header />
-        <main>
+        <main className="pt-20">
           <Hero />
           <About />
           <Skills />
